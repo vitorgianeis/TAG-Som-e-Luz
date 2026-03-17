@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- OneTrust Cookies Consent -->
+  <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="00000000-0000-0000-0000-000000000000"></script>
+  <script type="text/javascript">function OptanonWrapper() { }</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+  <meta name="description" content="TAG Som e Luz - Locação de equipamentos de som, iluminação, painel de LED e vídeo para eventos em São Carlos e região. Qualidade e profissionalismo para seu evento.">
+  <meta name="keywords" content="som e luz, locação de som, iluminação para eventos, painel de led, sonorização, dj, eventos são carlos">
+  <meta name="author" content="TAG Som e Luz">
+  <meta name="robots" content="index, follow">
+  
+  <title>TAG Som e Luz | Locação de Equipamentos para Eventos em São Carlos</title>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.facebook.com/TAGSomeLuzOficial/">
+  <meta property="og:title" content="TAG Som e Luz | Locação de Equipamentos para Eventos">
+  <meta property="og:description" content="Especialistas em som, iluminação, painel de LED e vídeo para eventos sociais e corporativos em São Carlos. Qualidade e profissionalismo garantidos.">
+  <meta property="og:image" content="https://www.tagsomeluz.com.br/assets/images/share/og-image.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.tagsomeluz.com.br/">
+  <meta property="twitter:title" content="TAG Som e Luz | Locação de Equipamentos para Eventos">
+  <meta property="twitter:description" content="Especialistas em som, iluminação, painel de LED e vídeo para eventos sociais e corporativos em São Carlos. Qualidade e profissionalismo garantidos.">
+  <meta property="twitter:image" content="https://www.tagsomeluz.com.br/assets/images/share/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#6a0dad">
+  <meta name="msapplication-TileColor" content="#6a0dad">
+  <meta name="theme-color" content="#6a0dad">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    /* CSS Reset e Variáveis Globais */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-color: #6a0dad;        /* Roxo principal */
+      --primary-dark: #4b0082;          /* Roxo escuro */
+      --primary-light: #8a2be2;          /* Roxo claro */
+      --secondary-color: #ffffff;        /* Branco */
+      --dark-bg: #1A1A1A;
+      --light-bg: #F5F5F5;
+      --text-dark: #333333;
+      --text-light: #666666;
+      --text-white: #FFFFFF;
+      --gradient-1: linear-gradient(135deg, #6a0dad 0%, #4b0082 100%);
+      --gradient-2: linear-gradient(135deg, #6a0dad 0%, #8a2be2 100%);
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      --border-radius: 12px;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+
+    /* Loader Animation */
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--dark-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s, visibility 0.5s;
+    }
+
+    .loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-content {
+      text-align: center;
+      color: var(--text-white);
+    }
+
+    .loader-spinner {
+      width: 80px;
+      height: 80px;
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      border-top-color: var(--primary-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .loader-progress {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+
+    /* Navegação */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      transition: all 0.3s;
+      background: transparent;
+    }
+
+    nav.scrolled {
+      background: rgba(26, 26, 26, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 40px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    logo img {
+    height: 50px;
+    width: auto;
+    /* filter: brightness(0) invert(1); */ /* Comente esta linha */
+    transition: all 0.3s;
+    }
+
+    nav.scrolled .logo img {
+      filter: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-white);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s;
+      position: relative;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    nav.scrolled .nav-links a {
+      color: var(--text-white);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary-color);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* Dropdown Menu */
+    .nav-links li {
+      position: relative;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--dark-bg);
+      min-width: 250px;
+      border-radius: 8px;
+      padding: 15px 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s;
+      box-shadow: var(--shadow-lg);
+      z-index: 10;
+    }
+
+    .nav-links li:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown li {
+      list-style: none;
+    }
+
+    .dropdown a {
+      padding: 10px 20px;
+      display: block;
+      color: var(--text-white) !important;
+    }
+
+    .dropdown a:hover {
+      background: rgba(106, 13, 173, 0.2);
+      color: var(--primary-color) !important;
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 30px;
+      height: 3px;
+      background: var(--text-white);
+      margin: 6px 0;
+      transition: all 0.3s;
+    }
+
+    /* Botão WhatsApp Flutuante */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      box-shadow: var(--shadow-lg);
+      z-index: 99;
+      transition: all 0.3s;
+      animation: pulse 2s infinite;
+      text-decoration: none;
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+      background: #128C7E;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    /* Botão Voltar ao Topo */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      border: none;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-top:hover {
+      background: var(--primary-dark);
+      transform: translateY(-5px);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--text-white);
+      padding: 0 20px;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero-title span {
+      color: var(--primary-color);
+      display: inline-block;
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 20px rgba(106, 13, 173, 0.5); }
+      50% { text-shadow: 0 0 40px rgba(106, 13, 173, 0.8); }
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 15px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+    }
+
+    .btn-primary {
+      background: var(--primary-color);
+      color: var(--text-white);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--text-white);
+      color: var(--text-white);
+    }
+
+    .btn-outline:hover {
+      background: var(--text-white);
+      color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+
+    /* Seções */
+    section {
+      padding: 100px 40px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+      color: var(--text-dark);
+    }
+
+    .section-title span {
+      color: var(--primary-color);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-light);
+      max-width: 700px;
+      margin: 0 auto 60px;
+      font-size: 1.1rem;
+    }
+
+    /* Sobre */
+    .about {
+      background: var(--light-bg);
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+      color: var(--text-light);
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary-color);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .stat-label {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .about-image {
+      position: relative;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s;
+    }
+
+    .about-image:hover img {
+      transform: scale(1.05);
+    }
+
+    .about-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, var(--primary-color), transparent);
+      opacity: 0.3;
+      z-index: 1;
+    }
+
+    /* Serviços */
+    .services {
+      background: var(--dark-bg);
+      color: var(--text-white);
+    }
+
+    .services .section-title {
+      color: var(--text-white);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 40px 30px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      transition: all 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      background: rgba(106, 13, 173, 0.2);
+      border-color: var(--primary-color);
+    }
+
+    .service-icon {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+
+    .service-card p {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+    }
+
+    /* Portfólio */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      height: 300px;
+    }
+
+    .portfolio-image {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.5s;
+    }
+
+    .portfolio-item:hover .portfolio-image {
+      transform: scale(1.1);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px;
+      color: var(--text-white);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-overlay h3 {
+      margin-bottom: 10px;
+      transform: translateY(20px);
+      transition: transform 0.3s;
+    }
+
+    .portfolio-overlay p {
+      transform: translateY(20px);
+      transition: transform 0.3s 0.1s;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .portfolio-item:hover .portfolio-overlay h3,
+    .portfolio-item:hover .portfolio-overlay p {
+      transform: translateY(0);
+    }
+
+    /* Equipamentos */
+    .equipamentos {
+      background: var(--light-bg);
+    }
+
+    .equipamentos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .equipamento-card {
+      background: white;
+      padding: 30px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s;
+    }
+
+    .equipamento-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .equipamento-icon {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    .equipamento-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .equipamento-card p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    /* Contato */
+    .contact {
+      background: var(--dark-bg);
+      color: var(--text-white);
+    }
+
+    .contact .section-title {
+      color: var(--text-white);
+    }
+
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .contact-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    .contact-item a,
+    .contact-item span {
+      color: var(--text-white);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .contact-item a:hover {
+      color: var(--primary-color);
+    }
+
+    
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: var(--text-white);
+      padding: 60px 40px 20px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-logo img {
+      height: 50px;
+      width: auto;
+      
+      margin-bottom: 20px;
+    }
+
+    .footer-logo p {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .footer-social a {
+      color: var(--text-white);
+      font-size: 1.5rem;
+      transition: all 0.3s;
+    }
+
+    .footer-social a:hover {
+      color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+
+    .footer-links h4 {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      color: var(--primary-color);
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.9rem;
+    }
+
+    /* Responsividade */
+    @media (max-width: 1024px) {
+      .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 15px 20px;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--dark-bg);
+        flex-direction: column;
+        align-items: center;
+        padding: 40px;
+        transition: left 0.3s;
+        gap: 20px;
+      }
+
+      .nav-links.active {
+        left: 0;
+      }
+
+      .dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        padding: 10px 0;
+        display: none;
+      }
+
+      .nav-links li.active .dropdown {
+        display: block;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .about-content,
+      .contact-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-social {
+        justify-content: center;
+      }
+
+      .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        bottom: 20px;
+        right: 20px;
+      }
+
+      .scroll-top {
+        bottom: 20px;
+        left: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <div class="loader-progress" id="loader-progress">0%</div>
+    </div>
+  </div>
+
+  <!-- Navegação -->
+  <nav id="navbar">
+    <a href="#home" class="logo">
+      <!-- Substitua pelo logo real da TAG Som e Luz -->
+      <img src="assets/logo.png" alt="TAG Som e Luz" style="height: 50px; width: auto;">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li class="has-dropdown">
+        <a href="#servicos">Serviços <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown">
+          <li><a href="#som">Som Profissional</a></li>
+          <li><a href="#iluminacao">Iluminação Cênica</a></li>
+          <li><a href="#led">Painel de LED</a></li>
+          <li><a href="#video">Vídeo & Projeção</a></li>
+          <li><a href="#dj">Equipamento para DJ</a></li>
+          <li><a href="#estrutura">Estrutura (Truss/Grid)</a></li>
+        </ul>
+      </li>
+      <li><a href="#portfolio">Portfólio</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+
+  <!-- Botão WhatsApp -->
+  <a href="https://wa.me/5516981719596" target="_blank" class="whatsapp-btn" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Botão Voltar ao Topo -->
+  <div class="scroll-top" id="scrollTop" aria-label="Voltar ao topo">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span>TAG</span> Som e Luz
+      </h1>
+      <p class="hero-subtitle">Transformamos seu evento em uma experiência inesquecível com som, iluminação e estrutura profissional em São Carlos e região.</p>
+      <div class="hero-buttons">
+        <a href="#contato" class="btn btn-primary">Solicitar Orçamento</a>
+        <a href="#portfolio" class="btn btn-outline">Conheça Nosso Trabalho</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre Section -->
+  <section class="about" id="sobre">
+    <div class="container">
+      <h2 class="section-title">Sobre a <span>TAG Som e Luz</span></h2>
+      <p class="section-subtitle">Empresa especializada em soluções completas para eventos em São Carlos, com foco em qualidade, inovação e segurança.</p>
+      
+      <div class="about-content">
+        <div class="about-text">
+          <p>A <strong>TAG Som e Luz</strong> é uma empresa localizada em São Carlos, São Paulo, especializada em serviços voltados para festas e eventos. Oferecemos soluções completas em animação, organização, decoração e artigos para eventos, atuando como fornecedora de equipamentos e suporte técnico para celebrações sociais e corporativas.</p>
+          <p>Nossa missão é proporcionar experiências únicas através da tecnologia e do profissionalismo. Com equipamentos de última geração e uma equipe altamente capacitada, garantimos que cada evento seja um sucesso absoluto.</p>
+          <p>Atendemos desde eventos particulares, como casamentos e aniversários, até grandes produções institucionais e promocionais. Estamos localizados na Avenida Comendador Alfredo Maffei, uma das principais vias comerciais da cidade, e fazemos parte do circuito de empresas de serviços para festas de São Carlos.</p>
+          
+          <div class="about-stats">
+            <div class="stat-item">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Eventos Realizados</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">10+</div>
+              <div class="stat-label">Anos de Experiência</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Clientes Satisfeitos</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-image">
+          <img src="assets/referencia.jpg" alt="Equipe TAG Som e Luz">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serviços Section -->
+  <section class="services" id="servicos">
+    <div class="container">
+      <h2 class="section-title">Nossos <span>Serviços</span></h2>
+      <p class="section-subtitle">Soluções completas em áudio, iluminação, vídeo e estrutura para tornar seu evento inesquecível.</p>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-music"></i>
+          </div>
+          <h3>Som Profissional</h3>
+          <p>Sistemas de áudio de alta potência e fidelidade para DJs, bandas e eventos de todos os portes.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3>Iluminação Cênica</h3>
+          <p>Moving heads, strobo, washes, controle DMX e efeitos especiais para criar a atmosfera perfeita.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-tv"></i>
+          </div>
+          <h3>Painel de LED</h3>
+          <p>Telões de LED de alta definição para transmissões, apresentações e experiências visuais imersivas.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-video"></i>
+          </div>
+          <h3>Vídeo & Projeção</h3>
+          <p>Projetores de alta potência e telas para eventos corporativos e sociais.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-headphones"></i>
+          </div>
+          <h3>Equipamento para DJ</h3>
+          <p>CDJs, mixers, controladores e monitores das melhores marcas.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-calendar-check"></i>
+          </div>
+          <h3>Estrutura (Truss/Grid)</h3>
+          <p>Montagem completa de palco e pista com box truss e grid para iluminação e efeitos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfólio Section -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <h2 class="section-title">Nossos <span>Projetos</span></h2>
+      <p class="section-subtitle">Confira alguns dos eventos que já realizamos com excelência e profissionalismo.</p>
+      
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+        <div class="portfolio-image">
+        <img src="assets/casamento.jpg" alt="Casamento" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+          <div class="portfolio-overlay">
+            <h3>Casamento</h3>
+            <p>Cerimônia e festa com estrutura completa de som e iluminação</p>
+          </div>
+        </div>
+        
+        <div class="portfolio-item">
+          <img src="assets/show.jpg" alt="Casamento" style="width:100%; height:100%; object-fit:cover;">
+          <div class="portfolio-overlay">
+            <h3>Show</h3>
+            <p>Line array e iluminação cênica para show ao ar livre</p>
+          </div>
+        </div>
+        
+        <div class="portfolio-item">
+          <img src="assets/corporativo.jpg" alt="Casamento" style="width:100%; height:100%; object-fit:cover;">
+          <div class="portfolio-overlay">
+            <h3>Evento Corporativo</h3>
+            <p>Convenção com painel de LED e sistema de som ambiente</p>
+          </div>
+        </div>
+        
+        <div class="portfolio-item">
+          <img src="assets/15anos.webp" alt="Casamento" style="width:100%; height:100%; object-fit:cover;">
+          <div class="portfolio-overlay">
+            <h3>Festa de 15 Anos</h3>
+            <p>Iluminação personalizada e som de alta qualidade</p>
+          </div>
+        </div>
+        
+        <div class="portfolio-item">
+          <img src="assets/festival.jpg" alt="Casamento" style="width:100%; height:100%; object-fit:cover;">
+          <div class="portfolio-overlay">
+            <h3>Festival</h3>
+            <p>Estrutura completa para festival com múltiplos palcos</p>
+          </div>
+        </div>
+        
+        <div class="portfolio-item">
+          <img src="assets/formatura.jpg" alt="Casamento" style="width:100%; height:100%; object-fit:cover;">
+          <div class="portfolio-overlay">
+            <h3>Formatura</h3>
+            <p>Sonorização e iluminação para colação de grau e baile</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipamentos Section -->
+  <section class="equipamentos">
+    <div class="container">
+      <h2 class="section-title">Nossos <span>Equipamentos</span></h2>
+      <p class="section-subtitle">Trabalhamos com as melhores marcas do mercado para garantir a qualidade do seu evento.</p>
+      
+      <div class="equipamentos-grid">
+        <div class="equipamento-card">
+          <div class="equipamento-icon">
+            <i class="fas fa-microphone-alt"></i>
+          </div>
+          <h3>Microfones</h3>
+          <p>Shure, Sennheiser, AKG</p>
+        </div>
+        
+        <div class="equipamento-card">
+          <div class="equipamento-icon">
+            <i class="fas fa-volume-up"></i>
+          </div>
+          <h3>Caixas Acústicas</h3>
+          <p>JBL, Meyer Sound, Electro-Voice</p>
+        </div>
+        
+        <div class="equipamento-card">
+          <div class="equipamento-icon">
+            <i class="fas fa-sliders-h"></i>
+          </div>
+          <h3>Mesas de Som</h3>
+          <p>Allen & Heath, Yamaha, Behringer</p>
+        </div>
+        
+        <div class="equipamento-card">
+          <div class="equipamento-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3>Iluminação</h3>
+          <p>Martin, Clay Paky, Robe</p>
+        </div>
+        
+        <div class="equipamento-card">
+          <div class="equipamento-icon">
+            <i class="fas fa-tv"></i>
+          </div>
+          <h3>Painéis LED</h3>
+          <p>Absen, Leyard, Samsung</p>
+        </div>
+        
+        <div class="equipamento-card">
+          <div class="equipamento-icon">
+            <i class="fas fa-video"></i>
+          </div>
+          <h3>Projetores</h3>
+          <p>Epson, Sony, Panasonic</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato Section -->
+<section class="contact" id="contato">
+  <div class="container">
+    <h2 class="section-title">Entre em <span>Contato</span></h2>
+    <p class="section-subtitle">Solicite um orçamento ou tire suas dúvidas com nossa equipe.</p>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div>
+        <div class="footer-logo">
+          <!-- Substitua pelo logo real da TAG Som e Luz -->
+          <img src="assets/logo.png" alt="TAG Som e Luz" style="height: 50px; width: auto;">
+        </div>
+        <p>Excelência em som, iluminação e vídeo para eventos em São Carlos e região.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/TAGSomeLuzOficial" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/tagsomluz/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Serviços</h4>
+        <ul>
+          <li><a href="#som">Som Profissional</a></li>
+          <li><a href="#iluminacao">Iluminação Cênica</a></li>
+          <li><a href="#led">Painel de LED</a></li>
+          <li><a href="#video">Vídeo & Projeção</a></li>
+          <li><a href="#dj">Equipamento para DJ</a></li>
+          <li><a href="#estrutura">Estrutura (Truss/Grid)</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Contato</h4>
+        <ul>
+          <li><i class="fas fa-phone"></i> (16) 98171-9596</li>
+          <li><i class="fab fa-whatsapp"></i> (16) 98171-9596</li>
+          <li><i class="fas fa-envelope"></i> contato@tagsomeluz.com.br</li>
+          <li><i class="fas fa-map-marker-alt"></i> São Carlos - SP</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 TAG Som e Luz. Todos os direitos reservados.  <i class="fas fa-heart" style="color: #6a0dad;"></i></p>
+    </div>
+  </footer>
+
+  <script>
+    // Loader Animation
+    window.addEventListener('load', function() {
+      const loader = document.getElementById('loader');
+      const loaderProgress = document.getElementById('loader-progress');
+      let progress = 0;
+      
+      const interval = setInterval(() => {
+        progress += Math.floor(Math.random() * 10) + 5;
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(interval);
+          setTimeout(() => {
+            loader.classList.add('hidden');
+          }, 500);
+        }
+        loaderProgress.textContent = progress + '%';
+      }, 100);
+    });
+
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Fechar menu ao clicar em link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // Dropdown em mobile
+    const dropdownParents = document.querySelectorAll('.has-dropdown');
+    
+    dropdownParents.forEach(item => {
+      item.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          this.classList.toggle('active');
+        }
+      });
+    });
+
+    // Scroll to top button
+    const scrollTop = document.getElementById('scrollTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        scrollTop.classList.add('visible');
+      } else {
+        scrollTop.classList.remove('visible');
+      }
+    });
+
+    scrollTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Active menu on scroll
+    const sections = document.querySelectorAll('section[id], .hero[id]');
+    const navItems = document.querySelectorAll('.nav-links a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const scrollPosition = window.scrollY + 100;
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        const href = item.getAttribute('href').replace('#', '');
+        if (href === current) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const target = document.querySelector(targetId);
+        if (target) {
+          const offsetTop = target.offsetTop - 70;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Form submission (demo)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
+      this.reset();
+    });
+  </script>
+</body>
+
+</html>
