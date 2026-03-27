@@ -3,7 +3,7 @@
 
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script async src="   "></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -64,10 +64,10 @@
     }
 
     :root {
-      --primary-color: #6a0dad;        /* Roxo principal */
-      --primary-dark: #4b0082;          /* Roxo escuro */
-      --primary-light: #8a2be2;          /* Roxo claro */
-      --secondary-color: #ffffff;        /* Branco */
+      --primary-color: #6a0dad;
+      --primary-dark: #4b0082;
+      --primary-light: #8a2be2;
+      --secondary-color: #ffffff;
       --dark-bg: #1A1A1A;
       --light-bg: #F5F5F5;
       --text-dark: #333333;
@@ -160,11 +160,10 @@
       box-shadow: var(--shadow-sm);
     }
 
-    logo img {
-    height: 50px;
-    width: auto;
-    /* filter: brightness(0) invert(1); */ /* Comente esta linha */
-    transition: all 0.3s;
+    .logo img {
+      height: 50px;
+      width: auto;
+      transition: all 0.3s;
     }
 
     nav.scrolled .logo img {
@@ -630,47 +629,6 @@
       transform: translateY(0);
     }
 
-    /* Equipamentos */
-    .equipamentos {
-      background: var(--light-bg);
-    }
-
-    .equipamentos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .equipamento-card {
-      background: white;
-      padding: 30px;
-      border-radius: var(--border-radius);
-      text-align: center;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s;
-    }
-
-    .equipamento-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .equipamento-icon {
-      font-size: 2.5rem;
-      color: var(--primary-color);
-      margin-bottom: 15px;
-    }
-
-    .equipamento-card h3 {
-      margin-bottom: 10px;
-      font-size: 1.1rem;
-    }
-
-    .equipamento-card p {
-      color: var(--text-light);
-      font-size: 0.9rem;
-    }
-
     /* Contato */
     .contact {
       background: var(--dark-bg);
@@ -680,49 +638,6 @@
     .contact .section-title {
       color: var(--text-white);
     }
-
-    .contact-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-    }
-
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .contact-icon {
-      width: 60px;
-      height: 60px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      color: var(--primary-color);
-    }
-
-    .contact-item a,
-    .contact-item span {
-      color: var(--text-white);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .contact-item a:hover {
-      color: var(--primary-color);
-    }
-
-    
 
     /* Footer */
     footer {
@@ -743,7 +658,6 @@
     .footer-logo img {
       height: 50px;
       width: auto;
-      
       margin-bottom: 20px;
     }
 
@@ -801,6 +715,100 @@
       text-align: center;
       color: rgba(255, 255, 255, 0.5);
       font-size: 0.9rem;
+    }
+
+    /* ========== MODAL PAINEL DE LED ========== */
+    .led-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 1000;
+      overflow-y: auto;
+    }
+
+    .led-modal.active {
+      display: block;
+    }
+
+    .led-modal-content {
+      max-width: 1200px;
+      margin: 50px auto;
+      background: var(--dark-bg);
+      border-radius: var(--border-radius);
+      padding: 40px;
+      position: relative;
+    }
+
+    .led-modal-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: var(--text-white);
+      cursor: pointer;
+      transition: color 0.3s;
+      z-index: 1;
+    }
+
+    .led-modal-close:hover {
+      color: var(--primary-color);
+    }
+
+    .led-modal h2 {
+      color: var(--text-white);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .led-modal .section-subtitle {
+      color: rgba(255, 255, 255, 0.7);
+      text-align: center;
+    }
+
+    .led-modal .led-videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .led-modal .video-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .led-modal .video-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .led-modal .video-card video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .led-modal .video-info {
+      padding: 20px;
+    }
+
+    .led-modal .video-info h3 {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .led-modal .video-info p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .led-modal .videos-cta {
+      text-align: center;
+      margin-top: 50px;
     }
 
     /* Responsividade */
@@ -901,6 +909,15 @@
         bottom: 20px;
         left: 20px;
       }
+
+      .led-modal .led-videos-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .led-modal-content {
+        margin: 20px;
+        padding: 20px;
+      }
     }
   </style>
 </head>
@@ -917,7 +934,6 @@
   <!-- Navegação -->
   <nav id="navbar">
     <a href="#home" class="logo">
-      <!-- Substitua pelo logo real da TAG Som e Luz -->
       <img src="assets/logo.png" alt="TAG Som e Luz" style="height: 50px; width: auto;">
     </a>
     <ul class="nav-links" id="navLinks">
@@ -928,7 +944,7 @@
         <ul class="dropdown">
           <li><a href="#som">Som Profissional</a></li>
           <li><a href="#iluminacao">Iluminação Cênica</a></li>
-          <li><a href="#led">Painel de LED</a></li>
+          <li><a href="#led" id="ledLink">Painel de LED</a></li>
           <li><a href="#video">Vídeo & Projeção</a></li>
           <li><a href="#dj">Equipamento para DJ</a></li>
           <li><a href="#estrutura">Estrutura (Truss/Grid)</a></li>
@@ -962,8 +978,13 @@
       </h1>
       <p class="hero-subtitle">Transformamos seu evento em uma experiência inesquecível com som, iluminação e estrutura profissional em São Carlos e região.</p>
       <div class="hero-buttons">
-        <a href="#contato" class="btn btn-primary">Solicitar Orçamento</a>
+        <a href="https://www.instagram.com/tagsomluz/" target="_blank" class="btn btn-outline">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
         <a href="#portfolio" class="btn btn-outline">Conheça Nosso Trabalho</a>
+        <a href="https://www.facebook.com/TAGSomeLuzOficial" target="_blank" class="btn btn-outline">
+          <i class="fab fa-facebook-f"></i> Facebook
+        </a>
       </div>
     </div>
   </section>
@@ -1069,9 +1090,9 @@
       
       <div class="portfolio-grid">
         <div class="portfolio-item">
-        <div class="portfolio-image">
-        <img src="assets/casamento.jpg" alt="Casamento" style="width:100%; height:100%; object-fit:cover;">
-        </div>
+          <div class="portfolio-image">
+            <img src="assets/casamento.jpg" alt="Casamento" style="width:100%; height:100%; object-fit:cover;">
+          </div>
           <div class="portfolio-overlay">
             <h3>Casamento</h3>
             <p>Cerimônia e festa com estrutura completa de som e iluminação</p>
@@ -1079,7 +1100,7 @@
         </div>
         
         <div class="portfolio-item">
-          <img src="assets/show.jpg" alt="Casamento" style="width:100%; height:100%; object-fit:cover;">
+          <img src="assets/show.jpg" alt="Show" style="width:100%; height:100%; object-fit:cover;">
           <div class="portfolio-overlay">
             <h3>Show</h3>
             <p>Line array e iluminação cênica para show ao ar livre</p>
@@ -1087,7 +1108,7 @@
         </div>
         
         <div class="portfolio-item">
-          <img src="assets/corporativo.jpg" alt="Casamento" style="width:100%; height:100%; object-fit:cover;">
+          <img src="assets/corporativo.jpg" alt="Evento Corporativo" style="width:100%; height:100%; object-fit:cover;">
           <div class="portfolio-overlay">
             <h3>Evento Corporativo</h3>
             <p>Convenção com painel de LED e sistema de som ambiente</p>
@@ -1095,7 +1116,7 @@
         </div>
         
         <div class="portfolio-item">
-          <img src="assets/15anos.webp" alt="Casamento" style="width:100%; height:100%; object-fit:cover;">
+          <img src="assets/15anos.webp" alt="Festa de 15 Anos" style="width:100%; height:100%; object-fit:cover;">
           <div class="portfolio-overlay">
             <h3>Festa de 15 Anos</h3>
             <p>Iluminação personalizada e som de alta qualidade</p>
@@ -1103,7 +1124,7 @@
         </div>
         
         <div class="portfolio-item">
-          <img src="assets/festival.jpg" alt="Casamento" style="width:100%; height:100%; object-fit:cover;">
+          <img src="assets/festival.jpg" alt="Festival" style="width:100%; height:100%; object-fit:cover;">
           <div class="portfolio-overlay">
             <h3>Festival</h3>
             <p>Estrutura completa para festival com múltiplos palcos</p>
@@ -1111,7 +1132,7 @@
         </div>
         
         <div class="portfolio-item">
-          <img src="assets/formatura.jpg" alt="Casamento" style="width:100%; height:100%; object-fit:cover;">
+          <img src="assets/formatura.jpg" alt="Formatura" style="width:100%; height:100%; object-fit:cover;">
           <div class="portfolio-overlay">
             <h3>Formatura</h3>
             <p>Sonorização e iluminação para colação de grau e baile</p>
@@ -1121,77 +1142,29 @@
     </div>
   </section>
 
-  <!-- Equipamentos Section -->
-  <section class="equipamentos">
+  <!-- Contato Section -->
+  <section class="contact" id="contato">
     <div class="container">
-      <h2 class="section-title">Nossos <span>Equipamentos</span></h2>
-      <p class="section-subtitle">Trabalhamos com as melhores marcas do mercado para garantir a qualidade do seu evento.</p>
+      <h2 class="section-title">Entre em <span>Contato</span></h2>
+      <p class="section-subtitle">Clique no botão abaixo e fale diretamente com a gente pelo WhatsApp.</p>
       
-      <div class="equipamentos-grid">
-        <div class="equipamento-card">
-          <div class="equipamento-icon">
-            <i class="fas fa-microphone-alt"></i>
-          </div>
-          <h3>Microfones</h3>
-          <p>Shure, Sennheiser, AKG</p>
-        </div>
-        
-        <div class="equipamento-card">
-          <div class="equipamento-icon">
-            <i class="fas fa-volume-up"></i>
-          </div>
-          <h3>Caixas Acústicas</h3>
-          <p>JBL, Meyer Sound, Electro-Voice</p>
-        </div>
-        
-        <div class="equipamento-card">
-          <div class="equipamento-icon">
-            <i class="fas fa-sliders-h"></i>
-          </div>
-          <h3>Mesas de Som</h3>
-          <p>Allen & Heath, Yamaha, Behringer</p>
-        </div>
-        
-        <div class="equipamento-card">
-          <div class="equipamento-icon">
-            <i class="fas fa-lightbulb"></i>
-          </div>
-          <h3>Iluminação</h3>
-          <p>Martin, Clay Paky, Robe</p>
-        </div>
-        
-        <div class="equipamento-card">
-          <div class="equipamento-icon">
-            <i class="fas fa-tv"></i>
-          </div>
-          <h3>Painéis LED</h3>
-          <p>Absen, Leyard, Samsung</p>
-        </div>
-        
-        <div class="equipamento-card">
-          <div class="equipamento-icon">
-            <i class="fas fa-video"></i>
-          </div>
-          <h3>Projetores</h3>
-          <p>Epson, Sony, Panasonic</p>
-        </div>
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="https://wa.me/5516981719596?text=Olá!%20Vi%20seu%20trabalho%20e%20gostaria%20de%20um%20orçamento" 
+           class="btn btn-primary" 
+           target="_blank" 
+           style="background: #25d366; border-color: #25d366; display: inline-flex; align-items: center; gap: 10px;">
+          <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> 
+          Falar pelo WhatsApp
+        </a>
       </div>
     </div>
   </section>
-
-  <!-- Contato Section -->
-<section class="contact" id="contato">
-  <div class="container">
-    <h2 class="section-title">Entre em <span>Contato</span></h2>
-    <p class="section-subtitle">Solicite um orçamento ou tire suas dúvidas com nossa equipe.</p>
-</section>
 
   <!-- Footer -->
   <footer>
     <div class="footer-content">
       <div>
         <div class="footer-logo">
-          <!-- Substitua pelo logo real da TAG Som e Luz -->
           <img src="assets/logo.png" alt="TAG Som e Luz" style="height: 50px; width: auto;">
         </div>
         <p>Excelência em som, iluminação e vídeo para eventos em São Carlos e região.</p>
@@ -1227,18 +1200,73 @@
       <div class="footer-links">
         <h4>Contato</h4>
         <ul>
-          <li><i class="fas fa-phone"></i> (16) 98171-9596</li>
           <li><i class="fab fa-whatsapp"></i> (16) 98171-9596</li>
-          <li><i class="fas fa-envelope"></i> contato@tagsomeluz.com.br</li>
           <li><i class="fas fa-map-marker-alt"></i> São Carlos - SP</li>
         </ul>
       </div>
     </div>
     
     <div class="footer-bottom">
-      <p>&copy; 2026 TAG Som e Luz. Todos os direitos reservados.  <i class="fas fa-heart" style="color: #6a0dad;"></i></p>
+      <p>&copy; 2026 TAG Som e Luz. Todos os direitos reservados. <i class="fas fa-heart" style="color: #6a0dad;"></i></p>
     </div>
   </footer>
+
+  <!-- Modal Painel de LED -->
+  <div id="ledModal" class="led-modal">
+    <div class="led-modal-content">
+      <span class="led-modal-close">&times;</span>
+      <h2 class="section-title">Painel de LED <span>em Ação</span></h2>
+      <p class="section-subtitle">Veja como nossos telões de LED transformam eventos em experiências visuais impressionantes</p>
+      
+      <div class="led-videos-grid">
+        <!-- Vídeo 1 -->
+        <div class="video-card">
+          <video controls preload="metadata">
+            <source src="assets/videos/video1.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo HTML5.
+          </video>
+        </div>
+        
+        <!-- Vídeo 2 -->
+        <div class="video-card">
+          <video controls preload="metadata">
+            <source src="assets/videos/video2.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo HTML5.
+          </video>
+        </div>
+        
+        <!-- Vídeo 3 -->
+        <div class="video-card">
+          <video controls preload="metadata">
+            <source src="assets/videos/video3.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo HTML5.
+          </video>
+          <div class="video-info">
+            <h3>Evento Corporativo</h3>
+            <p>Painel de LED para apresentações e branding</p>
+          </div>
+        </div>
+        
+        <!-- Vídeo 4 -->
+        <div class="video-card">
+          <video controls preload="metadata">
+            <source src="assets/videos/video4.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo HTML5.
+          </video>
+          <div class="video-info">
+            <h3>Festa de 15 Anos</h3>
+            <p>LED com fotos e efeitos personalizados</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="videos-cta">
+        <a href="#contato" class="btn btn-primary" onclick="closeLEDModal()">
+          <i class="fab fa-whatsapp"></i> Solicite um orçamento
+        </a>
+      </div>
+    </div>
+  </div>
 
   <script>
     // Loader Animation
@@ -1361,11 +1389,66 @@
       });
     });
 
-    // Form submission (demo)
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
-      this.reset();
+    // ========== MODAL PAINEL DE LED ==========
+    function openLEDModal() {
+      const modal = document.getElementById('ledModal');
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLEDModal() {
+      const modal = document.getElementById('ledModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Adicionar evento ao link do Painel de LED no menu e no card
+    document.addEventListener('DOMContentLoaded', function() {
+      // Link no dropdown do menu
+      const ledLink = document.querySelector('.dropdown a[href="#led"]');
+      if (ledLink) {
+        ledLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          openLEDModal();
+          
+          // Fechar menu mobile se estiver aberto
+          const navLinks = document.getElementById('navLinks');
+          const hamburger = document.getElementById('hamburger');
+          if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+          }
+        });
+      }
+      
+      // Card de serviço na seção Serviços
+      const serviceCards = document.querySelectorAll('.service-card');
+      serviceCards.forEach(card => {
+        const title = card.querySelector('h3');
+        if (title && title.innerText === 'Painel de LED') {
+          card.style.cursor = 'pointer';
+          card.addEventListener('click', function(e) {
+            e.preventDefault();
+            openLEDModal();
+          });
+        }
+      });
+      
+      // Fechar modal ao clicar no X
+      const closeBtn = document.querySelector('.led-modal-close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeLEDModal);
+      }
+      
+      // Fechar modal ao clicar fora do conteúdo
+      const modal = document.getElementById('ledModal');
+      if (modal) {
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) {
+            closeLEDModal();
+          }
+        });
+      }
     });
   </script>
 </body>
