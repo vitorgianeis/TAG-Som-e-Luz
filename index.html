@@ -717,99 +717,127 @@
       font-size: 0.9rem;
     }
 
-    /* ========== MODAL PAINEL DE LED ========== */
-    .led-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.95);
-      z-index: 1000;
-      overflow-y: auto;
-    }
+   /* ========== MODAL PAINEL DE LED ========== */
+.led-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  overflow-y: auto;
+}
 
-    .led-modal.active {
-      display: block;
-    }
+.led-modal.active {
+  display: block;
+}
 
-    .led-modal-content {
-      max-width: 1200px;
-      margin: 50px auto;
-      background: var(--dark-bg);
-      border-radius: var(--border-radius);
-      padding: 40px;
-      position: relative;
-    }
+.led-modal-content {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: var(--dark-bg);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  position: relative;
+}
 
-    .led-modal-close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 2rem;
-      color: var(--text-white);
-      cursor: pointer;
-      transition: color 0.3s;
-      z-index: 1;
-    }
+.led-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 25px;
+  font-size: 2rem;
+  color: var(--text-white);
+  cursor: pointer;
+  transition: color 0.3s;
+  z-index: 1;
+}
 
-    .led-modal-close:hover {
-      color: var(--primary-color);
-    }
+.led-modal-close:hover {
+  color: var(--primary-color);
+}
 
-    .led-modal h2 {
-      color: var(--text-white);
-      text-align: center;
-      margin-bottom: 20px;
-    }
+.led-modal h2 {
+  color: var(--text-white);
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 2rem;
+}
 
-    .led-modal .section-subtitle {
-      color: rgba(255, 255, 255, 0.7);
-      text-align: center;
-    }
+.led-modal .section-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
 
-    .led-modal .led-videos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
+.led-modal .led-videos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
 
-    .led-modal .video-card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: var(--border-radius);
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
+.led-modal .video-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
 
-    .led-modal .video-card:hover {
-      transform: translateY(-5px);
-    }
+.led-modal .video-card:hover {
+  transform: translateY(-5px);
+}
 
-    .led-modal .video-card video {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+.led-modal .video-card video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
 
-    .led-modal .video-info {
-      padding: 20px;
-    }
+.led-modal .video-info {
+  padding: 15px;
+}
 
-    .led-modal .video-info h3 {
-      color: var(--primary-color);
-      margin-bottom: 10px;
-    }
+.led-modal .video-info h3 {
+  color: var(--primary-color);
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
 
-    .led-modal .video-info p {
-      color: rgba(255, 255, 255, 0.7);
-    }
+.led-modal .video-info p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
 
-    .led-modal .videos-cta {
-      text-align: center;
-      margin-top: 50px;
-    }
+.led-modal .videos-cta {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Responsivo para mobile */
+@media (max-width: 768px) {
+  .led-modal .led-videos-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .led-modal-content {
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  .led-modal .video-card video {
+    height: 200px;
+  }
+  
+  .led-modal h2 {
+    font-size: 1.6rem;
+  }
+}
 
     /* Responsividade */
     @media (max-width: 1024px) {
@@ -1249,17 +1277,22 @@
             <source src="assets/videos/video4.mp4" type="video/mp4">
             Seu navegador não suporta vídeo HTML5.
           </video>
-          <div class="video-info">
-            <h3>Festa de 15 Anos</h3>
-            <p>LED com fotos e efeitos personalizados</p>
-          </div>
-        </div>
       </div>
-      
-      <div class="videos-cta">
-        <a href="#contato" class="btn btn-primary" onclick="closeLEDModal()">
-          <i class="fab fa-whatsapp"></i> Solicite um orçamento
-        </a>
+
+      <!-- Vídeo 5 -->
+        <div class="video-card">
+          <video controls preload="metadata">
+            <source src="assets/videos/video5.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo HTML5.
+          </video>
+      </div>
+
+       <!-- Vídeo 6 -->
+        <div class="video-card">
+          <video controls preload="metadata">
+            <source src="assets/videos/video5.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo HTML5.
+          </video>
       </div>
     </div>
   </div>
